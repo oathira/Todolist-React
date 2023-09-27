@@ -1,6 +1,58 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+TODOLIST APPLICATION
+To run the TODO list application locally, follow these steps:
+
+1. npx create-react-app react-todolist
+2.cd react-todolist
+
+Usage
+1.Use the input bar at the top of the app to add TODO items. Press the return (Enter) key to add a new TODO.
+2.Click on a TODO card to mark it as complete. Completed TODOs will move to the bottom of the list.
+3.Click the "Reset" button in the top-right corner to clear all TODOs and return to the initial state.
+4.The app works offline, and browser refreshes will not affect the TODOs' state.
+
+Code Structure
+The project structure is organized as follows:
+react-todolist/
+├── index.html
+├── css/
+│   ├── styles.css
+├── js/
+│   ├── app.js
+└── README.md
+index.html: The HTML file for the application's user interface.
+css/styles.css: CSS styles for the UI.
+js/app.js: JavaScript code for handling TODO functionality.
+
+Assumptions
+The app is assumed to work in modern web browsers, including the latest versions of Chrome, Firefox, and Safari.
+
+
+Key Features:
+
+Input Bar for Adding TODOs:
+simple input bar that allows users to add TODO items by pressing the return key (or Enter key).
+
+List of TODO Cards:
+Display a list of TODO cards where each TODO item is appended upon creation.
+
+Marking TODO as Complete:
+Allow users to click on a TODO card to mark it as complete.
+When marked as complete, move the TODO card to the bottom of the list.
+
+Sorting of TODOs:
+Active TODO cards should appear in order of creation, with the most recent on top.
+Completed TODO cards should appear in order of completion, with the most recent on top.
+
+Reset Button:
+a reset button in the top-right corner of the app.
+Clicking this button  clear all TODO items and return the app to its initial state.
+
+Browser Refresh Behavior:
+ hitting the refresh button, including a hard refresh, in the browser does not cause any change in the state of the app. It should work like a regular offline app, meaning that the TODOs should persist across page reloads.
+
 
 ## Available Scripts
 

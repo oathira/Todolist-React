@@ -1,38 +1,196 @@
-.App {
-  text-align: center;
+
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    margin:0;
+    padding:0;
+}
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: linear-gradient(35deg,violet,blue);
+    height: 100vh;
+    background-attachment: fixed;
+}
+  
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.container{
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width:50%;
+    margin: auto;
+    margin-top: 50px;
+   color: blueviolet;
+   position: relative;
+      }
+.header{
+    padding:10px;
+    margin: 10px;
+}
+ 
+form{
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    border: none;
+}
+form input{
+    width:100%;
+    border:2px solid blueviolet;
+    padding: 5px  5px;
+    color: blueviolet;
+}
+form button{
+   background-color: blueviolet;
+   border:2px solid blueviolet;
+   padding: 5px  5px;
+}
+form button:hover{
+    background-color: rgb(81, 7, 150);
+    border:2px solid rgb(83, 7, 153);
+}
+.todo-input:focus{
+    outline: none;
+    color: blueviolet;
+    background-color: whitesmoke;
+}
+::placeholder{
+    color: rgba(137, 43, 226, 0.473);
+}
+form button span{
+    color: white;
+    font-size: small;
+    padding: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.list-container{
+    margin: 20px 20px;
+    width:90%;
+}
+ul li {
+    background: rgb(240, 231, 241);
+    margin-top:5px;
+    font-size: 22px;
+    font-weight:lighter;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex:1;
+    overflow: hidden;
+}
+ul li:hover{
+    background:  rgb(81, 7, 150);
+    color:whitesmoke;
+}
+.icons{
+    display:flex;
+    flex-direction: row;
+}
+.icon{
+    cursor: pointer;
+}
+#edit{
+    margin-right: 10px;
+}
+#edit:hover,#delete:hover{
+    font-size: large;
+}
+.list-items{
+    margin: 0;
+    padding: 0;
+}
+li{
+    margin: 20px;
+    padding: 10px;
+    font-size: 26px;
+}
+.clear-completed,.reset-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    padding: 4px;
+    background-color: blueviolet;
+    border:2px solid blueviolet;
+    color: white;
+    font-size: small;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.reset-button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+   
+}
+
+  .checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  /* Hide the browser's default checkbox */
+  .checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
   }
-  to {
-    transform: rotate(360deg);
+  
+  /* Create a custom checkbox */
+  #todo-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: white;
+    border: 2px solid blueviolet;
   }
-}
+  
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .completed:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  /* Show the checkmark when checked */
+  .checkbox-container input:checked ~   .completed:after {
+    display: block;
+   
+  }
+
+  /* Style the checkmark/indicator */
+  .checkbox-container   .completed:after {
+    left: 8px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid blueviolet;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(40deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(40deg);
+  }
+
