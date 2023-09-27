@@ -1,7 +1,7 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-TODOLIST APPLICATION
+**TODOLIST APPLICATION**
 To run the TODO list application locally, follow these steps:
 
 1. npx create-react-app react-todolist
@@ -26,11 +26,11 @@ index.html: The HTML file for the application's user interface.
 css/styles.css: CSS styles for the UI.
 js/app.js: JavaScript code for handling TODO functionality.
 
-Assumptions
+**Assumptions**
 The app is assumed to work in modern web browsers, including the latest versions of Chrome, Firefox, and Safari.
 
 
-Key Features:
+**Key Features**
 
 Input Bar for Adding TODOs:
 simple input bar that allows users to add TODO items by pressing the return key (or Enter key).
