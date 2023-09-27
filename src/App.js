@@ -1,3 +1,5 @@
+
+  
 import React, { useEffect, useState } from 'react';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
@@ -8,36 +10,59 @@ function App() {
   const [todos, setTodos] = useState(initialState);
   const [editTodo, setEditTodo] = useState();
   const [checkedTodos, setCheckedTodos] = useState([]);
- 
+
+  // Initialize the completed status based on local storage data
+  useEffect(() => {
+    const storedTodos = JSON.parse(localStorage.getItem('todos')) || [];
+    setTodos(storedTodos);
+    
+    // Initialize checkedTodos based on completed status
+    const initialCheckedTodos = storedTodos
+      .filter((todo) => todo.completed)
+      .map((todo) => todo.id);
+    setCheckedTodos(initialCheckedTodos);
+  }, []);
+
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
   }, [todos]);
 
   const addTodo = (todo) => {
-    setTodos((prevTodos) => [...prevTodos, todo]);
+    // Include the completed status when adding a todo
+    setTodos((prevTodos) => [...prevTodos, { ...todo, completed: false }]);
+    alert('Todo added successfully!');
   };
 
   const deleteTodo = (id) => {
     setTodos((prevTodos) => prevTodos.filter((t) => t.id !== id));
+    alert('Todo removed!');
   };
 
   const updateItem = (title, id, completed) => {
+    // Include the completed status when updating a todo
     setTodos((prevTodos) =>
       prevTodos.map((todo) =>
-        todo.id === id ? {  title,id, completed } : todo
+        todo.id === id ? { ...todo, title, completed } : todo
       )
     );
     setEditTodo('');
   };
-  
 
   const toggleCheck = (id) => {
-    if (checkedTodos.includes(id)) {
-      setCheckedTodos(checkedTodos.filter((todoId) => todoId !== id));
-    } else {
-      setCheckedTodos([...checkedTodos, id]);
-    }
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
+    );
+    const updatedCheckedTodos = todos
+      .filter((todo) => todo.id === id ? !todo.completed : todo.completed)
+      .map((todo) => todo.id);
+    setCheckedTodos(updatedCheckedTodos);
   };
+
+
+
+
 
   const clearCompleted = () => {
     setTodos((prevTodos) =>
