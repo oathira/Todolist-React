@@ -1,44 +1,50 @@
-
+/* Reset some default styles and set a base font family */
 * {
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
+
+/* Apply styles to the entire body */
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-image: linear-gradient(35deg,violet,blue);
+    background-image: linear-gradient(35deg, violet, blue); /* Background gradient */
     height: 100vh;
-    background-attachment: fixed;
+    background-attachment: fixed; /* Fixed background */
 }
-  
+
+/* Style for code elements */
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
-.container{
+
+/* Styles for the main container */
+.container {
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: white;
-    width:50%;
+    width: 50%;
     margin: auto;
     margin-top: 50px;
-   color: blueviolet;
-   position: relative;
-      }
-.header{
-    padding:10px;
+    color: blueviolet;
+    position: relative; /* Allows absolute positioning of reset button */
+}
+
+/* Styles for the header */
+.header {
+    padding: 10px;
     margin: 10px;
 }
- 
-form{
+
+/* Styles for the form element */
+form {
     margin: 10px;
     display: flex;
     justify-content: space-between;
@@ -46,96 +52,128 @@ form{
     overflow: hidden;
     border: none;
 }
-form input{
-    width:100%;
-    border:2px solid blueviolet;
-    padding: 5px  5px;
+
+/* Styles for the input field in the form */
+form input {
+    width: 100%;
+    border: 2px solid blueviolet;
+    padding: 5px 5px;
     color: blueviolet;
 }
-form button{
-   background-color: blueviolet;
-   border:2px solid blueviolet;
-   padding: 5px  5px;
+
+/* Styles for the button in the form */
+form button {
+    background-color: blueviolet;
+    border: 2px solid blueviolet;
+    padding: 5px 5px;
 }
-form button:hover{
+
+/* Styles for the button on hover */
+form button:hover {
     background-color: rgb(81, 7, 150);
-    border:2px solid rgb(83, 7, 153);
+    border: 2px solid rgb(83, 7, 153);
 }
-.todo-input:focus{
+
+/* Styles for the input field when it has focus */
+.todo-input:focus {
     outline: none;
     color: blueviolet;
     background-color: whitesmoke;
 }
-::placeholder{
+
+/* Placeholder text color */
+::placeholder {
     color: rgba(137, 43, 226, 0.473);
 }
-form button span{
+
+/* Styles for the button text in the form */
+form button span {
     color: white;
     font-size: small;
     padding: 10px;
 }
 
-.list-container{
+/* Styles for the list container */
+.list-container {
     margin: 20px 20px;
-    width:90%;
+    width: 90%;
 }
+
+/* Styles for list items */
 ul li {
     background: rgb(240, 231, 241);
-    margin-top:5px;
+    margin-top: 5px;
     font-size: 22px;
-    font-weight:lighter;
+    font-weight: lighter;
     padding: 10px;
     display: flex;
     justify-content: space-between;
-    flex:1;
+    flex: 1;
     overflow: hidden;
 }
-ul li:hover{
-    background:  rgb(81, 7, 150);
-    color:whitesmoke;
+
+/* Styles for list items on hover */
+ul li:hover {
+    background: rgb(81, 7, 150);
+    color: whitesmoke;
 }
-.icons{
-    display:flex;
+
+/* Styles for icons and their container */
+.icons {
+    display: flex;
     flex-direction: row;
 }
-.icon{
+
+/* Styles for individual icons */
+.icon {
     cursor: pointer;
 }
-#edit{
+
+/* Styles for the edit icon */
+#edit {
     margin-right: 10px;
 }
-#edit:hover,#delete:hover{
+
+/* Styles for icons on hover */
+#edit:hover, #delete:hover {
     font-size: large;
 }
-.list-items{
+
+/* Styles for the list items container */
+.list-items {
     margin: 0;
     padding: 0;
 }
-li{
+
+/* Styles for individual list items */
+li {
     margin: 20px;
     padding: 10px;
     font-size: 26px;
 }
-.clear-completed,.reset-button{
+
+/* Styles for clear completed and reset button */
+.clear-completed, .reset-button {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 20px;
     padding: 4px;
     background-color: blueviolet;
-    border:2px solid blueviolet;
+    border: 2px solid blueviolet;
     color: white;
     font-size: small;
 }
 
+/* Styles for the reset button */
 .reset-button {
     position: absolute;
     top: 0px;
     right: 0px;
-   
 }
 
-  .checkbox-container {
+/* Styles for the checkbox container */
+.checkbox-container {
     display: block;
     position: relative;
     padding-left: 35px;
@@ -145,19 +183,19 @@ li{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-  }
-  
-  /* Hide the browser's default checkbox */
-  .checkbox-container input {
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
     width: 0;
-  }
-  
-  /* Create a custom checkbox */
-  #todo-title {
+}
+
+/* Styles for the custom checkbox */
+#todo-title {
     position: absolute;
     top: 0;
     left: 0;
@@ -165,24 +203,22 @@ li{
     width: 22px;
     background-color: white;
     border: 2px solid blueviolet;
-  }
-  
-  
-  /* Create the checkmark/indicator (hidden when not checked) */
-  .completed:after {
+}
+
+/* Styles for the checkmark/indicator (hidden when not checked) */
+.completed:after {
     content: "";
     position: absolute;
     display: none;
-  }
+}
 
-  /* Show the checkmark when checked */
-  .checkbox-container input:checked ~   .completed:after {
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .completed:after {
     display: block;
-   
-  }
+}
 
-  /* Style the checkmark/indicator */
-  .checkbox-container   .completed:after {
+/* Styles for the checkmark/indicator */
+.checkbox-container .completed:after {
     left: 8px;
     top: 4px;
     width: 5px;
@@ -192,5 +228,4 @@ li{
     -webkit-transform: rotate(40deg);
     -ms-transform: rotate(45deg);
     transform: rotate(40deg);
-  }
-
+}

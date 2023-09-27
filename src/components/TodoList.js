@@ -1,5 +1,3 @@
-
-// TodoList.js
 import React from 'react';
 
 const TodoList = ({ todos, deleteTodo, setEditTodo, toggleCheck, checkedTodos }) => {
@@ -13,6 +11,7 @@ const TodoList = ({ todos, deleteTodo, setEditTodo, toggleCheck, checkedTodos })
     .filter((todo) => checkedTodos.includes(todo.id))
     .sort((a, b) => b.completed - a.completed);
 
+  // Function to set the todo item for editing
   const editTask = (id) => {
     const task = todos.find((todo) => {
       return todo.id === id;
@@ -27,22 +26,27 @@ const TodoList = ({ todos, deleteTodo, setEditTodo, toggleCheck, checkedTodos })
         {activeTodos.map((todo) => {
           return (
             <li className="list-item" key={todo.id}>
-               <label class="checkbox-container"> {todo.title} 
-              <input
-                type="checkbox"
-                checked={checkedTodos.includes(todo.id)}
-                onChange={() => toggleCheck(todo.id)}
-              />
-             
-              <span id="todo-title" className={checkedTodos.includes(todo.id) ?'completed' : ''}>
-             
-              </span>
+              <label class="checkbox-container">
+                {/* Display the todo title */}
+                {todo.title}
+                {/* Checkbox to toggle completion status */}
+                <input
+                  type="checkbox"
+                  checked={checkedTodos.includes(todo.id)}
+                  onChange={() => toggleCheck(todo.id)}
+                />
+                {/* Span to style the todo title based on completion */}
+                <span id="todo-title" className={checkedTodos.includes(todo.id) ? 'completed' : ''}>
+                </span>
               </label>
+              {/* Icons for editing and deleting the todo */}
               <div className="icons">
                 <span className="icon" onClick={() => editTask(todo.id)}>
+                  {/* Edit icon */}
                   <i className="fa-solid fa-pen-to-square" id="edit"></i>
                 </span>
                 <span className="icon" onClick={() => deleteTodo(todo.id)}>
+                  {/* Delete icon */}
                   <i className="fa-solid fa-trash-can" id="delete"></i>
                 </span>
               </div>
@@ -51,34 +55,36 @@ const TodoList = ({ todos, deleteTodo, setEditTodo, toggleCheck, checkedTodos })
         })}
 
         {/* Render completed todos in order of completion */}
-{completedTodos.map((todo) => {
-  return (
-    <li className="list-item" key={todo.id}>
-     
-      <label class="checkbox-container"> {todo.title}
-  <input
-        type="checkbox"
-        checked={checkedTodos.includes(todo.id)}
-        onChange={() => toggleCheck(todo.id)}
-      />
-  <span id="todo-title" className={checkedTodos.includes(todo.id) ? 'completed' : ''}>
-         
-        </span>
-</label>
-        
-      
-      <div className="icons">
-        <span className="icon" onClick={() => editTask(todo.id)}>
-          <i className="fa-solid fa-pen-to-square" id="edit"></i>
-        </span>
-        <span className="icon" onClick={() => deleteTodo(todo.id)}>
-          <i className="fa-solid fa-trash-can" id="delete"></i>
-        </span>
-      </div>
-    </li>
-  );
-})}
-
+        {completedTodos.map((todo) => {
+          return (
+            <li className="list-item" key={todo.id}>
+              <label class="checkbox-container">
+                {/* Display the todo title */}
+                {todo.title}
+                {/* Checkbox to toggle completion status */}
+                <input
+                  type="checkbox"
+                  checked={checkedTodos.includes(todo.id)}
+                  onChange={() => toggleCheck(todo.id)}
+                />
+                {/* Span to style the todo title based on completion */}
+                <span id="todo-title" className={checkedTodos.includes(todo.id) ? 'completed' : ''}>
+                </span>
+              </label>
+              {/* Icons for editing and deleting the todo */}
+              <div className="icons">
+                <span className="icon" onClick={() => editTask(todo.id)}>
+                  {/* Edit icon */}
+                  <i className="fa-solid fa-pen-to-square" id="edit"></i>
+                </span>
+                <span className="icon" onClick={() => deleteTodo(todo.id)}>
+                  {/* Delete icon */}
+                  <i className="fa-solid fa-trash-can" id="delete"></i>
+                </span>
+              </div>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
